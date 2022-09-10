@@ -21,6 +21,7 @@ struct startButton: View {
         .padding()
         .frame(width: 200, height: 80)
         .background(.blue)
+        .cornerRadius(20)
         .overlay(
             RoundedRectangle(cornerRadius: 20).stroke(Color.white, lineWidth: 5)
         )

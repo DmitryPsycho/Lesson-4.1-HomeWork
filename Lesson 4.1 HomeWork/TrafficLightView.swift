@@ -20,6 +20,9 @@ struct ContentView: View {
     @State private var yellowLightOpacity = 0.3
     @State private var greenLightOpacity = 0.3
     
+    private let lightIsOn = 1.0
+    private let lightIsOff = 0.3
+    
     var body: some View {
         ZStack {
             Color(.black)
@@ -29,6 +32,7 @@ struct ContentView: View {
                 LightView(color: .red, opacity: redLightOpacity)
                 LightView(color: .yellow, opacity: yellowLightOpacity)
                 LightView(color: .green, opacity: greenLightOpacity)
+                
                 Spacer()
                 startButton(title: startButtonTitle) {
                     if startButtonTitle == "START" {
@@ -42,9 +46,6 @@ struct ContentView: View {
     }
     
     private func colorSwitch() {
-        let lightIsOn = 1.0
-        let lightIsOff = 0.3
-        
         switch currentLight {
         case .red:
             greenLightOpacity = lightIsOff
